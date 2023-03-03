@@ -3,8 +3,9 @@ My q5js boiler template for generative-xyz ordinal NFT's.
 This repository is a template for creating one-file, on-chain q5js artwork using the generative-xyz-template, with q5js.
 The example program generates some squares to show where the code would go.
 
--j4son3099
+Feel free to use this boilerplate to learn, or as a starter for your project; drop me a message if any questions or update suggestions.
 
+-j4son3099
 
 # Launch your art on Bitcoin
 
