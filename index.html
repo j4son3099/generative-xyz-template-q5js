@@ -147,6 +147,23 @@
     container.innerHTML = "<span>seed: " + seed + "</span><br>";
     document.body.prepend(container)
 
+    const sketch = (q5) => {
+    // Setup function
+    q5.setup = () => {
+      q5.createCanvas(q5.width, q5.height);
+      q5.background(q5.color(random(255)>>0,random(255)>>0, random(255)>>0));
+      q5.noStroke()
+    };
+
+    q5.draw = () => {
+      q5.background(q5.color(random(255)>>0,random(255)>>0, random(255)>>0));
+      q5.square(random(50,q5.width-50)>>0, random(50,q5.width-50)>>0, random(q5.width)>>0);
+    }
+  };
+
+  new q5(sketch);
+
+
     // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Add your code here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
 </script>
