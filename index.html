@@ -147,28 +147,36 @@
     container.innerHTML = "<span>seed: " + seed + "</span><br>";
     document.body.prepend(container)
 
-    const sketch = (q5) => {
-    //variables
+
+
+    let q5 = new Q5();
+    let noiseSeed = mathRand()*1e9  //generate a large noise seed, and use it for randomSeed.
+    q5.randomSeed(noiseSeed)
+
+    //**replace with your own variables**
     let loopCount = 0
     let maxLoops = 50
-    // Setup function
+    let qWidth = q5.windowWidth
+    let qHeight = q5.windowHeight
+
+    //**replace with your own setup and draw functions**
+
     q5.setup = () => {
-      q5.createCanvas(q5.width, q5.height);
-      q5.background(q5.color(random(255)>>0,random(255)>>0, random(255)>>0));
+
+      q5.createCanvas(qWidth, qHeight);
+      q5.background(q5.color(q5.random(255)>>0,q5.random(255)>>0, q5.random(255)>>0));
       q5.noStroke()
+
+
     };
 
-    // Draw random squares
     q5.draw = () => {
-      q5.background(q5.color(random(255)>>0,random(255)>>0, random(255)>>0));
-      q5.square(random(50,q5.width-50)>>0, random(50,q5.width-50)>>0, random(q5.width)>>0);
+      let currentSquareSide = q5.random(qWidth/15)>>0
+      q5.fill(q5.color(q5.random(255)>>0,q5.random(255)>>0, q5.random(255)>>0));
+      q5.square(q5.random(currentSquareSide,qWidth-currentSquareSide)>>0, q5.random(currentSquareSide,qHeight-currentSquareSide)>>0, currentSquareSide);
       loopCount++
       if (loopCount>maxLoops) q5.noLoop()
     }
-  };
-
-  new q5(sketch);
-
 
     // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Add your code here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
